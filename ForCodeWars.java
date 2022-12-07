@@ -2,32 +2,34 @@ import java.util.*;
 
 public class ForCodeWars {    
     
-    public static int nbDig(int n, int d) {
-        String[] str = new String[n + 1];
-        int nd = 0;
-        for (int i = 0; i < str.length; i++) {
-            str[i] = String.valueOf(i * i);
-            for (int j = 0; j < str[i].length(); j++) {
-                if (str[i].substring(j, (j + 1)).contains(String.valueOf(d))) {
-                    nd++;
-                }
+    public static boolean isIsogram(String str) {
+        String s = new String (str);        
+        s = s.toLowerCase();
+        StringBuilder sb = new StringBuilder(s); 
+        boolean b = true;
+        for (int i = 0; i < sb.length(); i++) {
+            if (sb.indexOf(sb.substring(i, i + 1)) != sb.lastIndexOf(sb.substring(i, i + 1))) {
+                b = false;
             }
         }
-        return nd;
+        return b;
     }
-    
+//    isIsogram "dermatoglyphics" = true
+//    isIsogram "moose" = false
+//    isIsogram "aba" = false
 
 
 //       hello world this is great
 
 
     public static void main(String[]args) {
-        String s = "16";
+        String s = "moOse"; // true 
+        String s2 = "16";
+        
 
-        System.out.println (nbDig(25,1));
+        System.out.println (isIsogram ("moOse"));
         
-        
-        
+//        System.out.println (s.toUpperCase());
         
         
         
