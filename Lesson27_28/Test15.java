@@ -1,5 +1,5 @@
 
-package Lesson27;
+package Lesson27_28;
 
 public class Test15 {
     void marafon(int temperaturaVozduxa, int tempBega)throws PodvernutNoguException{
